@@ -139,18 +139,38 @@ class _HomeState extends State<Home> {
             elevation: 0,
           ),
           SizedBox(height: 15),
-          SpeakersCustom(
-            imgpath: 'assets/vandana.jpg',
-            hex: 0xffA41BE4,
-            text: 'Vandana Verma',
-            subtext: 'Global BoD',
-            infosmall: 'OWASP, InfoSecKids & InfoSecGirls',
+          InkWell(
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (context) => CustomDialogBox(
+                  hex:0xffffffff,
+                  name:'Vandana Verma',
+                  infohex: 0xffA41BE4,
+                  bodyinfo:'Vandana is Security Solutions Architect at IBM India Software Labs. She is a Vice-Chair of the OWASP Global Board of Directors. She leads Diversity Initiatives like InfosecGirls and WoSec. She is also the founder of InfosecKids. She has experience ranging from Application Security to Infrastructure and now dealing with Product Security. She has been Keynote speaker / Speaker / Trainer at various public events including Global OWASP AppSec events to BlackHat events to regional events like BSides events in India.' ,
+                  position: 'Global BoD at OWASP, InfoSecKids & InfoSecGirls',
+                ),
+              );
+            },
+            child: SpeakersCustom(
+              imgpath: 'assets/vandana.jpg',
+              hex: 0xffA41BE4,
+              text: 'Vandana Verma',
+              subtext: 'Global BoD',
+              infosmall: 'OWASP, InfoSecKids & InfoSecGirls',
+            ),
           ),
           InkWell(
             onTap: () {
               showDialog(
                 context: context,
-                builder: (context) => CustomDialogBox(),
+                builder: (context) => CustomDialogBox(
+                  hex:0xffffffff,
+                  name:'Usha Rengaraju',
+                  infohex: 0xffFC257E,
+                  bodyinfo:'I am a unicorn data scientist with strong foundations in Economics, Finance , Business Foundations ,Business Analytics and Psychology. I specialize in Probabilistic Graphical Models. I have over 7 years of industry experience.I also possess great public speaking and writing skills.I am a champion athlete and have represented my state in National games twice. Open to new opportunities' ,
+                  position: 'Data Science Consultant at Infinite-Sum Modeling Inc.',
+                ),
               );
             },
             child: SpeakersCustom(
@@ -161,12 +181,26 @@ class _HomeState extends State<Home> {
               infosmall: 'Infinite-Sum Modeling Inc.',
             ),
           ),
-          SpeakersCustom(
-            imgpath: 'assets/lakshya.jpg',
-            hex: 0xffFC9F25,
-            text: 'Lakshya Sivaramakrishnan',
-            subtext: 'Program Lead',
-            infosmall: 'Women Techmakers India',
+          InkWell(
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (context) => CustomDialogBox(
+                  hex:0xffffffff,
+                  name:'Lakshya Sivaramakrishnan',
+                  infohex: 0xffFC9F25,
+                  bodyinfo:'Managing and Leading the Women Techmakers India program for Google looking to revitalize, grow and nurture the women in technology community in India through collaborations, technical talks and empowerment with the right resources and skills to ensure diversity and inclusion in all developer communities in India. Worked as a Data Scientist at the India Ops Analytics Team at Cerner where I leveraged audit logs for drawing insights on enhancing patient experience and for automating the process of Issue Replication.' ,
+                  position: 'Program Lead at Women Techmakers India',
+                ),
+              );
+            },
+            child: SpeakersCustom(
+              imgpath: 'assets/lakshya.jpg',
+              hex: 0xffFC9F25,
+              text: 'Lakshya Sivaramakrishnan',
+              subtext: 'Program Lead',
+              infosmall: 'Women Techmakers India',
+            ),
           ),
           SizedBox(
             height: 100,
@@ -311,8 +345,48 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
-      Center(child: Text('Highlights')),
-      Center(child: Text('Info')),
+      Padding(
+        padding: EdgeInsets.fromLTRB(4, 0, 0, 0),
+        child:Column(
+          children:[
+            Container(
+              child:AppBar(
+                title: Text(
+                    '#HackLikeAGirl',
+                  style:TextStyle(
+                    color:Colors.white,
+                    fontSize:28,
+                    fontWeight:FontWeight.bold,
+                  ),
+                ),
+                backgroundColor: Color(0xff131313),
+                elevation: 0,
+              ),
+            ),
+          ],
+        ),
+      ),
+      Padding(
+        padding: EdgeInsets.fromLTRB(4, 0, 0, 0),
+        child:Column(
+          children:[
+            Container(
+              child:AppBar(
+                title: Text(
+                  'Sponsors',
+                  style:TextStyle(
+                    color:Colors.white,
+                    fontSize:28,
+                    fontWeight:FontWeight.bold,
+                  ),
+                ),
+                backgroundColor: Color(0xff131313),
+                elevation: 0,
+              ),
+            ),
+          ],
+        ),
+      ),
     ];
     return Scaffold(
       body: SingleChildScrollView(
