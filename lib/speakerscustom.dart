@@ -8,13 +8,7 @@ class SpeakersCustom extends StatelessWidget {
   final String subtext;
   final String infosmall;
 
-  const SpeakersCustom(
-      {Key key,
-      this.imgpath,
-      this.hex,
-      this.text,
-      this.subtext,
-      this.infosmall})
+  const SpeakersCustom({Key key, this.imgpath, this.hex, this.text, this.subtext, this.infosmall})
       : super(key: key);
 
   @override
@@ -25,64 +19,61 @@ class SpeakersCustom extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.fromLTRB(17, 0, 19, 0),
-          child: InkWell(
-            child: Container(
-              height: 270,
-              width: 359,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(imgpath),
-                  fit: BoxFit.cover,
-                  colorFilter: new ColorFilter.mode(
-                      Color(hex).withOpacity(0.6), BlendMode.srcOver),
-                ),
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(4),
-                  topLeft: Radius.circular(4),
-                  bottomLeft: Radius.circular(4),
-                  bottomRight: Radius.circular(4),
-                ),
+          child: Container(
+            height: 270,
+            width: 359,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(imgpath),
+                fit: BoxFit.cover,
+                colorFilter: new ColorFilter.mode(Color(hex).withOpacity(0.6), BlendMode.srcOver),
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      text,
-                      style: GoogleFonts.poppins(
-                        textStyle: TextStyle(
-                          fontSize: 27,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(4),
+                topLeft: Radius.circular(4),
+                bottomLeft: Radius.circular(4),
+                bottomRight: Radius.circular(4),
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    text,
+                    style: GoogleFonts.poppins(
+                      textStyle: TextStyle(
+                        fontSize: 27,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 8),
-                    Text(
-                      subtext,
-                      style: GoogleFonts.poppins(
-                        textStyle: TextStyle(
-                          fontSize: 18,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
+                  ),
+                  SizedBox(height: 8),
+                  Text(
+                    subtext,
+                    style: GoogleFonts.poppins(
+                      textStyle: TextStyle(
+                        fontSize: 18,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 4),
-                    Text(
-                      infosmall,
-                      style: GoogleFonts.poppins(
-                        textStyle: TextStyle(
-                          fontSize: 14,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
+                  ),
+                  SizedBox(height: 4),
+                  Text(
+                    infosmall,
+                    style: GoogleFonts.poppins(
+                      textStyle: TextStyle(
+                        fontSize: 14,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),
