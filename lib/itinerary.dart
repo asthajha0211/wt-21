@@ -1,17 +1,21 @@
 import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Itinerary extends StatelessWidget {
   final String time;
   final String content;
   final value;
-  const Itinerary({Key key, this.time,this.content,this.value}) : super(key:key);
+
+  const Itinerary({Key key, this.time, this.content, this.value})
+      : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment:CrossAxisAlignment.stretch,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Padding(
           padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
@@ -20,17 +24,19 @@ class Itinerary extends StatelessWidget {
               Row(
                 children: [
                   Expanded(
-                    flex:1,
+                    flex: 1,
                     child: Text(
                       time,
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Color(0xfff5f5f5),
+                      style: GoogleFonts.poppins(
+                        textStyle: TextStyle(
+                          fontSize: 14,
+                          color: Color(0xfff5f5f5),
+                        ),
                       ),
                     ),
                   ),
                   Expanded(
-                    flex:5,
+                    flex: 5,
                     child: DottedLine(
                       direction: Axis.horizontal,
                       dashColor: Color(0xfff5f5f5),
@@ -46,24 +52,25 @@ class Itinerary extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.fromLTRB(70, 4, 0, 4),
           child: Container(
-            width:312,
+            width: 312,
             height: 70,
             child: Card(
               shape: RoundedRectangleBorder(
-                borderRadius:BorderRadius.circular(4),
+                borderRadius: BorderRadius.circular(4),
               ),
               child: Padding(
-                padding:EdgeInsets.fromLTRB(8, 8, 4, 6),
-                child:Text(
+                padding: EdgeInsets.fromLTRB(8, 8, 4, 6),
+                child: Text(
                   content,
-                  style: TextStyle(
-                    color:Color(0xfff5f5f5),
-                    fontSize:17,
+                  style: GoogleFonts.poppins(
+                    textStyle: TextStyle(
+                      color: Color(0xfff5f5f5),
+                      fontSize: 17,
+                    ),
                   ),
                 ),
               ),
-              color:Color(value),
-
+              color: Color(value),
             ),
           ),
         ),

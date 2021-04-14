@@ -29,6 +29,15 @@ dependencies:
   dio: ^3.0.10
   url_launcher:
   flutter_custom_dialog: ^1.0.20
+  google_fonts: ^1.1.2
+  splashscreen:
+  flutter_launcher_icons:
+  flutter_statusbarcolor: ^0.2.3
+
+flutter_icons:
+  image_path: "assets/icon.png"
+  android: true
+
 
 
   # The following adds the Cupertino Icons font to your application.

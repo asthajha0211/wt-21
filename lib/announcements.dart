@@ -1,12 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Announce extends StatelessWidget {
   final String text1;
   final String text2;
   final colorhex;
-  const Announce({Key key, this.text1,this.text2,this.colorhex})
+
+  const Announce({Key key, this.text1, this.text2, this.colorhex})
       : super(key: key);
 
   @override
@@ -16,8 +18,8 @@ class Announce extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Container(
-          width: 312,
-          height: 100,
+          // width: 312,
+          // height: 111,
           child: Card(
             elevation: 3,
             shape: RoundedRectangleBorder(
@@ -28,8 +30,8 @@ class Announce extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: SvgPicture.asset(
-                      'assets/announcement.svg',
-                    color:Color(colorhex),
+                    'assets/announcement.svg',
+                    color: Color(colorhex),
                   ),
                 ),
                 Expanded(
@@ -42,31 +44,34 @@ class Announce extends StatelessWidget {
                       children: [
                         Text(
                           text1,
-                          style: TextStyle(
-                            color: Color(0xfff5f5f5),
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
+                          style: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                              color: Color(0xfff5f5f5),
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                        SizedBox(height:8),
+                        SizedBox(height: 8),
                         Text(
                           text2,
-                          style: TextStyle(
-                            color: Color(0xfff5f5f5),
-                            fontSize: 15,
+                          style: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                              color: Color(0xfff5f5f5),
+                              fontSize: 15,
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
                 ),
-
               ],
             ),
             color: Color(0xff313131),
           ),
         ),
-        SizedBox(height:4),
+        SizedBox(height: 4),
       ],
     );
   }
